@@ -1,5 +1,6 @@
 import express from 'express';
 import axios from 'axios';
+import cors from 'cors';
 const port = process.env.PORT || 80;
 const handleRequest = async (axiosCall, res) => {
     try {
@@ -10,6 +11,7 @@ const handleRequest = async (axiosCall, res) => {
     };
 };
 express()
+    .use(cors())
     .use(express.static('public'))
     .use(express.json())
     .post('/users', async (req, res) => await handleRequest(() => axios.post('https://users.roblox.com/v1/usernames/users', req.body), res))
