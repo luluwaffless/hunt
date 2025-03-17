@@ -99,5 +99,9 @@ count.addEventListener("click", async () => {
     parseResults(hubBadgesRequest, "hub", "<a href='https://www.roblox.com/games/124180448122765/The-Hunt-Mega-Edition'>hub badges</a>", true);
     parseResults(regularTokensRequest, "regular");
     parseResults(megaTokensRequest, "mega");
+    
+    id.placeholder = "insert an username";
+    count.disabled = false;
+    id.disabled = false;
     debounce = false;
 });

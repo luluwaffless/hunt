@@ -16,4 +16,5 @@ express()
     .get('/thumbnail', async (req, res) => await handleRequest(() => axios.get(`https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=${req.query.id}&size=720x720&format=png`), res))
     .get('/badges/:id', async (req, res) => await handleRequest(() => axios.get(`https://badges.roblox.com/v1/badges/${req.params.id}`), res))
     .get('/dates/:id', async (req, res) => await handleRequest(() => axios.get(`https://badges.roblox.com/v1/users/${req.params.id}/badges/awarded-dates?badgeIds=${req.query.ids}`), res))
+    .get('/', (_, res) => res.redirect('/hunt'))
     .listen(port, () => console.log(`http://localhost${port !== 80 ? `:${port}` : ''}`));
