@@ -49,9 +49,9 @@ const parseResults = (results, element, title, useBadgeName) => {
     if (results.length === 0) return
     for (const badge of results) {
         if (badge.owned) {
-            owned.push(`<a class="true" ${useBadgeName ? `href="https://www.roblox.com/games/${badge.id}/">${`${owned.length + 1}`}. ${normalizeName(badge.name)}` : `href="https://www.roblox.com/games/${badge.awardingUniverse.rootPlaceId}/">${`${owned.length + 1}`}. ${normalizeName(badge.awardingUniverse.name)}`}</a>`);
+            owned.push(`<a class="true" ${useBadgeName ? `href="https://www.roblox.com/badges/${badge.id}/">${`${owned.length + 1}`}. ${normalizeName(badge.name)}` : `href="https://www.roblox.com/games/${badge.awardingUniverse.rootPlaceId}/">${`${owned.length + 1}`}. ${normalizeName(badge.awardingUniverse.name)}`}</a>`);
         } else {
-            notOwned.push(`<a class="false" ${useBadgeName ? `href="https://www.roblox.com/games/${badge.id}/">${`${notOwned.length + 1}`}. ${normalizeName(badge.name)}` : `href="https://www.roblox.com/games/${badge.awardingUniverse.rootPlaceId}/">${`${notOwned.length + 1}`}. ${normalizeName(badge.awardingUniverse.name)}`}</a>`);
+            notOwned.push(`<a class="false" ${useBadgeName ? `href="https://www.roblox.com/badges/${badge.id}/">${`${notOwned.length + 1}`}. ${normalizeName(badge.name)}` : `href="https://www.roblox.com/games/${badge.awardingUniverse.rootPlaceId}/">${`${notOwned.length + 1}`}. ${normalizeName(badge.awardingUniverse.name)}`}</a>`);
         };
     };
     console.log(results);
